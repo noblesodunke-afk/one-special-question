@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(196, 30, 58, 0.22), transparent 30%),
+        radial-gradient(circle at 80% 80%, rgba(255, 80, 110, 0.12), transparent 30%),
+        #09090c;
+
+    color: white;
+}
+
+/* Main card */
+
+.card {
+    position: relative;
+    width: min(92%, 520px);
+    padding: 55px 40px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    animation: cardEntrance 0.9s ease;
+}
+
+/* Puppy */
+
+.puppy {
+    margin-bottom: 28px;
+}
+
+.puppy img {
+    width: 190px;
+    height: 190px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 4px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.03),
+        0 20px 50px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.5s ease;
+}
+
+.puppy img:hover {
+    transform: scale(1.04);
+}
+
+/* Heading */
+
+h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(32px, 6vw, 46px);
+    font-weight: 600;
+
+    letter-spacing: -1px;
+
+    background: linear-gradient(
+        120deg,
+        #ffffff,
+        #ff9aaa
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 14px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 15px;
+    margin-bottom: 34px;
+}
+
+/* Buttons */
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    border: none;
+    padding: 14px 34px;
+
+    border-radius: 100px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+#yesBtn {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #d4143d,
+        #ff4f6d
+    );
+
+    box-shadow:
+        0 10px 30px rgba(212, 20, 61, 0.3);
+}
+
+#yesBtn:hover {
+    transform: translateY(-3px) scale(1.04);
+
+    box-shadow:
+        0 15px 40px rgba(212, 20, 61, 0.45);
+}
+
+#noBtn {
+    color: rgba(255, 255, 255, 0.75);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#noBtn:hover {
+    background: rgba(255, 255, 255, 0.11);
+}
+
+/* Date form */
+
+.date-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-width: 320px;
+
+    margin: 28px auto 0;
+}
+
+.date-form label {
+    text-align: left;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    font-size: 13px;
+}
+
+.date-form input {
+    width: 100%;
+
+    padding: 14px;
+
+    color: white;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 12px;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+}
+
+.date-form input:focus {
+    border-color: rgba(255, 100, 125, 0.7);
+}
+
+#continueBtn {
+    margin-top: 12px;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #d4143d,
+        #ff4f6d
+    );
+}
+
+/* Final screen */
+
+.heart-screen {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 40, 80, 0.18),
+            transparent 45%
+        ),
+        #08080b;
+}
+
+.heart-container {
+    animation: heartEntrance 1s ease;
+}
+
+.big-heart {
+    font-size: clamp(150px, 30vw, 260px);
+
+    line-height: 1;
+
+    color: #ff3158;
+
+    filter:
+        drop-shadow(0 0 25px rgba(255, 49, 88, 0.7))
+        drop-shadow(0 0 70px rgba(255, 49, 88, 0.35));
+
+    animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+.heart-screen h1 {
+    margin-top: 20px;
+
+    font-size: clamp(38px, 7vw, 58px);
+}
+
+.date-text {
+    margin-top: 14px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 18px;
+}
+
+.time-text {
+    margin-top: 5px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 16px;
+}
+
+/* Floating hearts */
+
+.floating-heart {
+    position: absolute;
+
+    color: rgba(255, 70, 100, 0.3);
+
+    font-size: 25px;
+
+    animation: floatHeart 6s linear infinite;
+}
+
+.heart-one {
+    left: 10%;
+    bottom: -50px;
+}
+
+.heart-two {
+    left: 30%;
+    bottom: -50px;
+    animation-delay: 1.5s;
+}
+
+.heart-three {
+    right: 25%;
+    bottom: -50px;
+    animation-delay: 3s;
+}
+
+.heart-four {
+    right: 8%;
+    bottom: -50px;
+    animation-delay: 4.5s;
+}
+
+/* Animations */
+
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes heartEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .card {
+        padding: 42px 24px;
+        border-radius: 24px;
+    }
+
+    .puppy img {
+        width: 155px;
+        height: 155px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        padding: 13px 27px;
+    }
+}
+
